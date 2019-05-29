@@ -28,8 +28,9 @@ const Form = (props) => {
                 defaultValue={props.contact}
                 className="form-control mt-3" />
             <div className="controls mt-4">
-                <p>Submit your form by saying <b>'Submit Form'</b></p>
+                <p className="text-left">Submit your form by saying <b>'Submit Form'</b></p>
                 <p className="text-left">Reset your form by saying <b>'Reset'</b></p>
+                <p>You can stop recording by saying <b>'Stop or Pause'</b></p>
             </div>
             {props.isSubmit && <div className="alert alert-success w-100 mt-4">Thanks for submitting details !</div>}
         </form>
