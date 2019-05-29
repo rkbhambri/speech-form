@@ -31,28 +31,32 @@ const Controls = (props) => {
         }
     };
 
+    const validateSpeech = (transcript) => {
+        console.log(transcript, transcript === 'first name' || transcript === 'last name' || transcript === 'email' || transcript === 'contact')
+        return transcript === 'first name' || transcript === 'last name' || transcript === 'email' || transcript === 'contact';
+    }
+
     recognition.onresult = (event) => {
         const resultsLength = event.results.length;
         for (let i = event.resultIndex; i < resultsLength; i++) {
             const transcript = event.results[i][0].transcript.trim();
             speechText = speechText ? speechText.concat(transcript) : transcript;
             setSpeechText(speechText);
-
             // Check if user speaks firstname then set firstname
-            if (event.results[i - 1] !== undefined && transcript !== 'first name' && event.results[i - 1][0].transcript.includes('first name')) {
+            if (event.results[i - 1] !== undefined && !validateSpeech(transcript) && event.results[i - 1][0].transcript.includes('first name')) {
                 setFirstName(transcript);
             }
             // Check if user speaks lastname then set lastname
-            if (event.results[i - 1] !== undefined && transcript !== 'last name' && event.results[i - 1][0].transcript.includes('last name')) {
+            if (event.results[i - 1] !== undefined && !validateSpeech(transcript) && event.results[i - 1][0].transcript.includes('last name')) {
                 setLastName(transcript);
             }
             // Check if user speaks email then set email
-            if (event.results[i - 1] !== undefined && transcript !== 'email' && event.results[i - 1][0].transcript.includes('email')) {
+            if (event.results[i - 1] !== undefined && !validateSpeech(transcript) && event.results[i - 1][0].transcript.includes('email')) {
                 setEmail(transcript.replace(/ +/g, "").toLowerCase());
             }
             // Check if user say 'contact' then set contact number
-            if (event.results[i - 1] !== undefined && transcript !== 'contact' && event.results[i - 1][0].transcript.includes('contact')) {
-                setContact(Number(transcript.replace(/ +/g, "")));
+            if (event.results[i - 1] !== undefined && !validateSpeech(transcript) && event.results[i - 1][0].transcript.includes('contact')) {
+                isNaN(Number(transcript.replace(/ +/g, ""))) ? alert('Please enter valid number') : setContact(Number(transcript.replace(/ +/g, "")));
             }
             // Check if user say 'Reset' then reset input details
             if (event.results[i - 1] !== undefined && transcript.includes('reset')) {
