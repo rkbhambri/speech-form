@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/speech-form/static/css/main.5209d037.chunk.css",
+    "main.js": "/speech-form/static/js/main.7bf69a5f.chunk.js",
+    "main.js.map": "/speech-form/static/js/main.7bf69a5f.chunk.js.map",
+    "runtime~main.js": "/speech-form/static/js/runtime~main.5bc5f149.js",
+    "runtime~main.js.map": "/speech-form/static/js/runtime~main.5bc5f149.js.map",
+    "static/css/2.266e55a5.chunk.css": "/speech-form/static/css/2.266e55a5.chunk.css",
+    "static/js/2.f3300468.chunk.js": "/speech-form/static/js/2.f3300468.chunk.js",
+    "static/js/2.f3300468.chunk.js.map": "/speech-form/static/js/2.f3300468.chunk.js.map",
+    "index.html": "/speech-form/index.html",
+    "precache-manifest.62cf4c7600bc196a17909f2661e3f9e3.js": "/speech-form/precache-manifest.62cf4c7600bc196a17909f2661e3f9e3.js",
+    "service-worker.js": "/speech-form/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/speech-form/static/css/2.266e55a5.chunk.css.map",
+    "static/css/main.5209d037.chunk.css.map": "/speech-form/static/css/main.5209d037.chunk.css.map",
+    "static/media/voice.svg": "/speech-form/static/media/voice.36487195.svg"
+  }
+}
