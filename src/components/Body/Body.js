@@ -14,6 +14,7 @@ const Controls = (props) => {
     let [email, setEmail] = useState('');
     let [contact, setContact] = useState('');
     let [isSubmit, setSubmitFlag] = useState(false);
+
     // useEffect(() => {
     //     recognition.lang = 'en-IN';
     //     recognition.continuous = true;
@@ -32,9 +33,17 @@ const Controls = (props) => {
     };
 
     const validateSpeech = (transcript) => {
-        console.log(transcript, transcript === 'first name' || transcript === 'last name' || transcript === 'email' || transcript === 'contact')
         return transcript === 'first name' || transcript === 'last name' || transcript === 'email' || transcript === 'contact';
-    }
+    };
+
+    const resetFormFields = () => {
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setContact('');
+        disableStart && setDisableStart(false);
+        recognition.stop();
+    };
 
     recognition.onresult = (event) => {
         const resultsLength = event.results.length;
@@ -42,6 +51,7 @@ const Controls = (props) => {
             const transcript = event.results[i][0].transcript.trim();
             speechText = speechText ? speechText.concat(transcript) : transcript;
             setSpeechText(speechText);
+
             // Check if user speaks firstname then set firstname
             if (event.results[i - 1] !== undefined && !validateSpeech(transcript) && event.results[i - 1][0].transcript.includes('first name')) {
                 setFirstName(transcript);
@@ -60,25 +70,15 @@ const Controls = (props) => {
             }
             // Check if user say 'Reset' then reset input details
             if (event.results[i - 1] !== undefined && transcript.includes('reset')) {
-                setFirstName('');
-                setLastName('');
-                setEmail('');
-                setContact('');
-                disableStart && setDisableStart(false);
-                recognition.stop();
+                resetFormFields();
             }
             // Check if user say 'Submit Form' then submit response and show thanks message
             if (event.results[i - 1] !== undefined && transcript.includes('submit form')) {
+                resetFormFields();
                 setSubmitFlag(true);
-                setFirstName('');
-                setLastName('');
-                setEmail('');
-                setContact('');
-                disableStart && setDisableStart(false);
                 setTimeout(() => {
                     setSubmitFlag(false);
                 }, 8000);
-                recognition.stop();
             }
             // Check if user said 'stop'/'pause' then stop recording voice
             if (transcript === 'pause' || transcript === 'stop') {
