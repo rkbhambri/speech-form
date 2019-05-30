@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/speech-form/static/css/main.888d8b0d.chunk.css",
+    "main.css": "/speech-form/static/css/main.5209d037.chunk.css",
     "main.js": "/speech-form/static/js/main.67de12dd.chunk.js",
+    "main.js.map": "/speech-form/static/js/main.67de12dd.chunk.js.map",
     "runtime~main.js": "/speech-form/static/js/runtime~main.5bc5f149.js",
-    "static/css/2.56d65a16.chunk.css": "/speech-form/static/css/2.56d65a16.chunk.css",
+    "runtime~main.js.map": "/speech-form/static/js/runtime~main.5bc5f149.js.map",
+    "static/css/2.266e55a5.chunk.css": "/speech-form/static/css/2.266e55a5.chunk.css",
     "static/js/2.f3300468.chunk.js": "/speech-form/static/js/2.f3300468.chunk.js",
+    "static/js/2.f3300468.chunk.js.map": "/speech-form/static/js/2.f3300468.chunk.js.map",
     "index.html": "/speech-form/index.html",
-    "precache-manifest.eb75f1188888927fba612072ec59e682.js": "/speech-form/precache-manifest.eb75f1188888927fba612072ec59e682.js",
+    "precache-manifest.f1486a815a4bcdb9e698833de50610e2.js": "/speech-form/precache-manifest.f1486a815a4bcdb9e698833de50610e2.js",
     "service-worker.js": "/speech-form/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/speech-form/static/css/2.266e55a5.chunk.css.map",
+    "static/css/main.5209d037.chunk.css.map": "/speech-form/static/css/main.5209d037.chunk.css.map",
     "static/media/voice.svg": "/speech-form/static/media/voice.36487195.svg"
   }
 }
